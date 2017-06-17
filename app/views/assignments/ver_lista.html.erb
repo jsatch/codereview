@@ -1,0 +1,36 @@
+<h1>Tarea</h1>
+<button class="btn btn-success" type="button" id="but_crear">Crear Tarea</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Curso</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for @assignment in @assignments %>
+      <tr>
+        <td><%= @assignment["name"] %></td>
+        <td><%= @assignment["subject"] %></td>
+        <td>
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<script>
+var crear_on_click = function(){
+  location.href = '/assignments/ver_crear';
+}
+document.querySelector("#but_crear").addEventListener('click', crear_on_click);
+</script>

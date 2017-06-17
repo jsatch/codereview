@@ -1,0 +1,54 @@
+<h1>Crear Tarea</h1>
+<form method="post" action="guardar_evaluacion">
+  <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/>
+  <div class="form-group">
+    <label for="nombre_eva">Nombre</label>
+    <input type="text" class="form-control" id="nombre_eva"
+                                            name="nombre_eva"
+                                            placeholder="Ingrese nombre de evaluación">
+  </div>
+  <div class="form-group">
+    <label for="ciclo_eva">Ciclo</label>
+    <input type="text" class="form-control" id="ciclo_eva"
+                                            name="ciclo_eva"
+                                            placeholder="Ingrese ciclo">
+  </div>
+  <div class="form-group">
+    <label for="descripcion_eva">Descripción</label>
+    <textarea id="descripcion_eva"
+              class="form-control" name="descripcion_eva"></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Guardar</button> 
+</form>
+<hr/>
+<h2>Preguntas</h2>
+<form method="post" action="guardar_pregunta">
+  <div class="well">
+    <div class="form-group">
+      <label for="texto_pregunta">Texto:</label>
+      <textarea class="form-control" id="texto_pregunta" placeholder="Texto de la pregunta"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="puntaje_pregunta">Puntaje</label>
+      <input type="email" class="form-control" id="puntaje_pregunta" placeholder="Puntaje">
+    </div>
+    <div class="form-group">
+      <label for="lenguaje_pregunta">Lenguaje</label>
+      <select name="lenguaje_pregunta">
+        <option value="C">C</option>
+        <option value="C++">C++</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Scheme">Scheme</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+  </div>
+  <div class="list-group">
+    <a href="#" class="list-group-item">Pregunta 1 (4 puntos)</a>
+    <a href="#" class="list-group-item">Pregunta 2 (3 puntos)</a>
+    <a href="#" class="list-group-item">Pregunta 3 ( 7 puntos)</a>
+  </div>
+</form>
+
